@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1ha8a1gkbkh8"]
+
+[ext_resource type="PackedScene" uid="uid://bjrk5e3so33wm" path="res://models/pieces/base/hexagon cover.glb" id="1_y5pdk"]
+[ext_resource type="Material" uid="uid://tbhlk2gcwxq3" path="res://placeholdermaterials/selected_tile.tres" id="2_tdoxq"]
+
+[node name="hexagon cover" instance=ExtResource("1_y5pdk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Circle_001" parent="." index="0"]
+material_override = ExtResource("2_tdoxq")

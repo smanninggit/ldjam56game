@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://bjjfxdlbkiww5"]
+
+[ext_resource type="Script" path="res://scripts/hexagon_grid.gd" id="1_wb4te"]
+[ext_resource type="PackedScene" uid="uid://cisp8d65flufc" path="res://models/pieces/hexagon_tile.tscn" id="2_jv3va"]
+[ext_resource type="PackedScene" uid="uid://cjdj1ynpmunre" path="res://models/insidehive/hexagon_tile_big.tscn" id="3_khia0"]
+[ext_resource type="PackedScene" uid="uid://pu5a3o53g3xj" path="res://models/insidehive/buildingtiles/queen_building.tscn" id="6_7odaj"]
+[ext_resource type="PackedScene" uid="uid://djt74eirijcb1" path="res://uiscenes/building_selection.tscn" id="10_364eu"]
+[ext_resource type="PackedScene" uid="uid://bjvwxbiycnf31" path="res://helperscenes/click_detector.tscn" id="21_338dy"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1tybt"]
+
+[sub_resource type="Sky" id="Sky_77vyc"]
+sky_material = SubResource("ProceduralSkyMaterial_1tybt")
+
+[sub_resource type="Environment" id="Environment_v13no"]
+background_mode = 2
+sky = SubResource("Sky_77vyc")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="HexagonGrid" type="Node3D" parent="." groups=["medhex"]]
+unique_name_in_owner = true
+script = ExtResource("1_wb4te")
+grid_size = 5
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_v13no")
+
+[node name="Camera3D" type="Camera3D" parent="." groups=["medcam"]]
+transform = Transform3D(1, 0, 0, 0, 0.34202, 0.939693, 0, -0.939693, 0.34202, 0.2, 5.851, 3.587)
+fov = 72.5
+size = 10.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.339083, 0.940756, 0, -0.940756, -0.339083, 173.766, 425.771, -35.911)
+
+[node name="HexagonTile" parent="." instance=ExtResource("2_jv3va")]
+transform = Transform3D(-4.54598e-07, 0, 10.4, 0, 1, 0, -10.4, 0, -4.54598e-07, 0, 0, 0)
+visible = false
+
+[node name="BorderHexagon" parent="." instance=ExtResource("3_khia0")]
+transform = Transform3D(-4.5897e-07, 0, 10.5, 0, 2.143, 0, -10.5, 0, -4.5897e-07, 0, -0.01, 0)
+
+[node name="UI" type="Node3D" parent="."]
+visible = false
+
+[node name="BuildingSelection" parent="UI" groups=["medbuild"] instance=ExtResource("10_364eu")]
+
+[node name="ClickDetector" parent="." instance=ExtResource("21_338dy")]
+
+[node name="HexagonTile2" parent="." instance=ExtResource("6_7odaj")]

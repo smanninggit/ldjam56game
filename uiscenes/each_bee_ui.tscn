@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bekkp0tls2adp"]
+
+[ext_resource type="Script" path="res://scripts/each_bee_ui.gd" id="1_18piw"]
+[ext_resource type="Texture2D" uid="uid://d4icvleludgrn" path="res://uiassets/icons/Soldier_Icon.png" id="1_r12ol"]
+
+[node name="MarginContainer" type="MarginContainer"]
+clip_contents = true
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+script = ExtResource("1_18piw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_r12ol")
+expand_mode = 5
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Bee Name"
+alignment = 2
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]

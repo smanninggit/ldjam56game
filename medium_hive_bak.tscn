@@ -1,0 +1,112 @@
+[gd_scene load_steps=25 format=3 uid="uid://gvqe4h8ime2v"]
+
+[ext_resource type="Script" path="res://scripts/hexagon_grid.gd" id="1_wb4te"]
+[ext_resource type="PackedScene" uid="uid://cisp8d65flufc" path="res://models/pieces/hexagon_tile.tscn" id="2_jv3va"]
+[ext_resource type="PackedScene" uid="uid://cjdj1ynpmunre" path="res://models/insidehive/hexagon_tile_big.tscn" id="3_khia0"]
+[ext_resource type="PackedScene" uid="uid://bsutjshk68r4f" path="res://uiscenes/go_outside.tscn" id="4_kcf6q"]
+[ext_resource type="PackedScene" uid="uid://diok8q7dolsu1" path="res://uiscenes/go_inside.tscn" id="5_oy0mi"]
+[ext_resource type="PackedScene" uid="uid://dvbnkhnymehby" path="res://uiscenes/selected_tile_info.tscn" id="6_rqxr0"]
+[ext_resource type="PackedScene" uid="uid://cdy2hbd8ieh6b" path="res://uiscenes/selected_bee_info.tscn" id="7_dtaq4"]
+[ext_resource type="PackedScene" uid="uid://kl7qr0ne6qq5" path="res://uiscenes/selected_hive_info.tscn" id="8_tgwqd"]
+[ext_resource type="PackedScene" uid="uid://4o1b22amtnxc" path="res://uiscenes/selected_resource_info.tscn" id="9_rqd4r"]
+[ext_resource type="PackedScene" uid="uid://djt74eirijcb1" path="res://uiscenes/building_selection.tscn" id="10_364eu"]
+[ext_resource type="PackedScene" uid="uid://bnrel83csvslp" path="res://uiscenes/resource_interface.tscn" id="11_bdnjy"]
+[ext_resource type="PackedScene" uid="uid://chej1yjky4afw" path="res://uiscenes/hive_debug_actions.tscn" id="12_bs8rw"]
+[ext_resource type="PackedScene" uid="uid://qmodjjcwwjv0" path="res://uiscenes/floating_resource_text.tscn" id="13_psfti"]
+[ext_resource type="PackedScene" uid="uid://d0s2a8tv8x67g" path="res://uiscenes/bee_selection.tscn" id="14_t4ijy"]
+[ext_resource type="PackedScene" uid="uid://cawmd4ukmn8fk" path="res://uiscenes/battle_screen.tscn" id="15_6bhy6"]
+[ext_resource type="PackedScene" uid="uid://drovwwtsn3hr8" path="res://uiscenes/multi_bees_menu.tscn" id="16_1ckuc"]
+[ext_resource type="PackedScene" uid="uid://duikyryibuep1" path="res://main_menu.tscn" id="17_be6wd"]
+[ext_resource type="PackedScene" uid="uid://djgs44y04e8xe" path="res://uiscenes/pause_menu.tscn" id="18_a7l1a"]
+[ext_resource type="PackedScene" uid="uid://caoj4rgw8co4o" path="res://uiscenes/settings_menu.tscn" id="19_0pcxb"]
+[ext_resource type="PackedScene" uid="uid://byo8ejiqkj0xi" path="res://uiscenes/failure_screen.tscn" id="20_uyh06"]
+[ext_resource type="PackedScene" uid="uid://bjvwxbiycnf31" path="res://helperscenes/click_detector.tscn" id="21_338dy"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1tybt"]
+
+[sub_resource type="Sky" id="Sky_77vyc"]
+sky_material = SubResource("ProceduralSkyMaterial_1tybt")
+
+[sub_resource type="Environment" id="Environment_v13no"]
+background_mode = 2
+sky = SubResource("Sky_77vyc")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="HexagonGrid" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_wb4te")
+grid_size = 5
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_v13no")
+
+[node name="Camera3D" type="Camera3D" parent="." groups=["medcam"]]
+transform = Transform3D(1, 0, 0, 0, 0.34202, 0.939693, 0, -0.939693, 0.34202, 0.2, 5.851, 3.587)
+current = true
+fov = 72.5
+size = 10.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.339083, 0.940756, 0, -0.940756, -0.339083, 173.766, 425.771, -35.911)
+
+[node name="HexagonTile" parent="." instance=ExtResource("2_jv3va")]
+transform = Transform3D(-4.54598e-07, 0, 10.4, 0, 1, 0, -10.4, 0, -4.54598e-07, 0, 0, 0)
+visible = false
+
+[node name="BorderHexagon" parent="." instance=ExtResource("3_khia0")]
+transform = Transform3D(-2.14186e-07, 0, 4.9, 0, 1, 0, -4.9, 0, -2.14186e-07, 0, -0.01, 0)
+
+[node name="UI" type="Node3D" parent="."]
+visible = false
+
+[node name="GoOutside" parent="UI" instance=ExtResource("4_kcf6q")]
+
+[node name="GoInside" parent="UI" instance=ExtResource("5_oy0mi")]
+visible = false
+
+[node name="SelectedCellInfo" parent="UI" instance=ExtResource("6_rqxr0")]
+visible = false
+
+[node name="SelectedBeeInfo" parent="UI" instance=ExtResource("7_dtaq4")]
+visible = false
+
+[node name="SelectedHiveInfo" parent="UI" instance=ExtResource("8_tgwqd")]
+visible = false
+
+[node name="SelectedResourceInfo" parent="UI" instance=ExtResource("9_rqd4r")]
+visible = false
+
+[node name="BuildingSelection" parent="UI" instance=ExtResource("10_364eu")]
+
+[node name="ResourceInterface" parent="UI" instance=ExtResource("11_bdnjy")]
+
+[node name="HiveDebugActions" parent="UI" instance=ExtResource("12_bs8rw")]
+
+[node name="FloatingResourceText" parent="UI" instance=ExtResource("13_psfti")]
+
+[node name="BeeSelection" parent="UI" instance=ExtResource("14_t4ijy")]
+visible = false
+
+[node name="BattleScreen" parent="UI" instance=ExtResource("15_6bhy6")]
+visible = false
+
+[node name="MultiBees" parent="UI" instance=ExtResource("16_1ckuc")]
+visible = false
+
+[node name="MainMenu" parent="UI" instance=ExtResource("17_be6wd")]
+unique_name_in_owner = true
+offset_left = 0.0
+offset_right = 0.0
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("18_a7l1a")]
+visible = false
+
+[node name="SettingsMenu" parent="UI" instance=ExtResource("19_0pcxb")]
+unique_name_in_owner = true
+visible = false
+
+[node name="FailureScreen" parent="UI" instance=ExtResource("20_uyh06")]
+visible = false
+
+[node name="ClickDetector" parent="." instance=ExtResource("21_338dy")]

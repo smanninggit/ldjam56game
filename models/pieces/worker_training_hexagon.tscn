@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvcaonrfs3ldw"]
+
+[ext_resource type="PackedScene" uid="uid://bpdili1x4ak44" path="res://models/pieces/base/hexagon.glb" id="1_4kcng"]
+[ext_resource type="Material" uid="uid://my8rebl1sfji" path="res://placeholdermaterials/worker_training.tres" id="2_66f31"]
+
+[node name="hexagon" instance=ExtResource("1_4kcng")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Circle" parent="." index="0"]
+material_override = ExtResource("2_66f31")

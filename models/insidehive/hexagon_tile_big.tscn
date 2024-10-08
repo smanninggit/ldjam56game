@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjdj1ynpmunre"]
+
+[ext_resource type="PackedScene" uid="uid://bpdili1x4ak44" path="res://models/pieces/base/hexagon.glb" id="2_7j0o1"]
+
+[node name="HexagonTile" type="Node3D"]
+
+[node name="hexagon" parent="." instance=ExtResource("2_7j0o1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)

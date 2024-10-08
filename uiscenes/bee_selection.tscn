@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0s2a8tv8x67g"]
+
+[ext_resource type="PackedScene" uid="uid://defeej3vjd4fn" path="res://uiscenes/bee_button.tscn" id="1_rlydn"]
+[ext_resource type="Texture2D" uid="uid://00vehrvufn3j" path="res://uiassets/icons/Scout_Icon.png" id="2_rbbns"]
+[ext_resource type="Texture2D" uid="uid://d4icvleludgrn" path="res://uiassets/icons/Soldier_Icon.png" id="3_0drnx"]
+[ext_resource type="Texture2D" uid="uid://bo0fgqr4seem6" path="res://uiassets/icons/Worker_Icon.png" id="4_0n8s2"]
+
+[node name="BeeSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" groups=["beetut"]]
+layout_mode = 2
+text = "Wait for a scout to be produced."
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="BeeButton" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_rlydn")]
+layout_mode = 2
+image_icons = Array[Texture]([ExtResource("2_rbbns"), ExtResource("4_0n8s2"), ExtResource("3_0drnx")])
+
+[node name="BeeButton2" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_rlydn")]
+layout_mode = 2
+image_icons = Array[Texture]([ExtResource("2_rbbns"), ExtResource("4_0n8s2"), ExtResource("3_0drnx")])
+
+[node name="BeeButton3" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_rlydn")]
+layout_mode = 2
+image_icons = Array[Texture]([ExtResource("2_rbbns"), ExtResource("4_0n8s2"), ExtResource("3_0drnx")])

@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://defeej3vjd4fn"]
+
+[ext_resource type="Script" path="res://scripts/bee_button.gd" id="1_1khco"]
+[ext_resource type="Texture2D" uid="uid://byodkb6ypgfp3" path="res://uiassets/buildingiconplaceholder.png" id="2_r26ub"]
+
+[node name="BeeButton" type="MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+mouse_filter = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+script = ExtResource("1_1khco")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+icon = ExtResource("2_r26ub")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Key" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+text = "1"
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,140 @@
+[gd_scene load_steps=31 format=3 uid="uid://dhtkgpfbsth2j"]
+
+[ext_resource type="Script" path="res://scripts/hexagon_grid.gd" id="1_1qtyt"]
+[ext_resource type="PackedScene" uid="uid://cisp8d65flufc" path="res://models/pieces/hexagon_tile.tscn" id="2_yqbmw"]
+[ext_resource type="PackedScene" uid="uid://cjdj1ynpmunre" path="res://models/insidehive/hexagon_tile_big.tscn" id="3_7vst2"]
+[ext_resource type="PackedScene" uid="uid://dvbnkhnymehby" path="res://uiscenes/selected_tile_info.tscn" id="4_flnna"]
+[ext_resource type="PackedScene" uid="uid://bsutjshk68r4f" path="res://uiscenes/go_outside.tscn" id="4_i0rlq"]
+[ext_resource type="PackedScene" uid="uid://duikyryibuep1" path="res://main_menu.tscn" id="4_upn6t"]
+[ext_resource type="PackedScene" uid="uid://djt74eirijcb1" path="res://uiscenes/building_selection.tscn" id="5_3jikj"]
+[ext_resource type="PackedScene" uid="uid://diok8q7dolsu1" path="res://uiscenes/go_inside.tscn" id="5_u56vv"]
+[ext_resource type="PackedScene" uid="uid://bjvwxbiycnf31" path="res://helperscenes/click_detector.tscn" id="5_yrobs"]
+[ext_resource type="PackedScene" uid="uid://bnrel83csvslp" path="res://uiscenes/resource_interface.tscn" id="6_k4d4n"]
+[ext_resource type="PackedScene" uid="uid://chej1yjky4afw" path="res://uiscenes/hive_debug_actions.tscn" id="7_alq7j"]
+[ext_resource type="PackedScene" uid="uid://cdy2hbd8ieh6b" path="res://uiscenes/selected_bee_info.tscn" id="7_g5xtn"]
+[ext_resource type="PackedScene" uid="uid://qmodjjcwwjv0" path="res://uiscenes/floating_resource_text.tscn" id="8_3oedf"]
+[ext_resource type="PackedScene" uid="uid://kl7qr0ne6qq5" path="res://uiscenes/selected_hive_info.tscn" id="8_eiyq8"]
+[ext_resource type="PackedScene" uid="uid://4o1b22amtnxc" path="res://uiscenes/selected_resource_info.tscn" id="8_h8khb"]
+[ext_resource type="PackedScene" uid="uid://d0s2a8tv8x67g" path="res://uiscenes/bee_selection.tscn" id="11_13dyf"]
+[ext_resource type="PackedScene" uid="uid://cawmd4ukmn8fk" path="res://uiscenes/battle_screen.tscn" id="14_f1gt5"]
+[ext_resource type="PackedScene" uid="uid://drovwwtsn3hr8" path="res://uiscenes/multi_bees_menu.tscn" id="14_v40gq"]
+[ext_resource type="PackedScene" uid="uid://caoj4rgw8co4o" path="res://uiscenes/settings_menu.tscn" id="17_0bcke"]
+[ext_resource type="PackedScene" uid="uid://djgs44y04e8xe" path="res://uiscenes/pause_menu.tscn" id="17_1js1b"]
+[ext_resource type="PackedScene" uid="uid://vaewjypnwjac" path="res://uiscenes/medium_inside.tscn" id="17_y8ij3"]
+[ext_resource type="PackedScene" uid="uid://6vmj07uth8yt" path="res://uiscenes/medium_outside.tscn" id="18_4swfb"]
+[ext_resource type="PackedScene" uid="uid://dlnlc33c67jda" path="res://uiscenes/large_outside.tscn" id="19_p5gy3"]
+[ext_resource type="PackedScene" uid="uid://byo8ejiqkj0xi" path="res://uiscenes/failure_screen.tscn" id="19_pmq2k"]
+[ext_resource type="PackedScene" uid="uid://baifwcx5y6u30" path="res://uiscenes/large_inside.tscn" id="20_pqv0d"]
+[ext_resource type="PackedScene" uid="uid://dy5c8eecdnxyp" path="res://uiscenes/winner_screen.tscn" id="25_njqlh"]
+[ext_resource type="AudioStream" uid="uid://blb4ac4nih0bw" path="res://uiscenes/6508499988774912.wav" id="26_ung8h"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1tybt"]
+
+[sub_resource type="Sky" id="Sky_77vyc"]
+sky_material = SubResource("ProceduralSkyMaterial_1tybt")
+
+[sub_resource type="Environment" id="Environment_v13no"]
+background_mode = 2
+sky = SubResource("Sky_77vyc")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="HexagonGrid" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_1qtyt")
+grid_size = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_v13no")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.34202, 0.939693, 0, -0.939693, 0.34202, 0.2, 5.851, 3.587)
+current = true
+fov = 72.5
+size = 10.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.339083, 0.940756, 0, -0.940756, -0.339083, 173.766, 425.771, -35.911)
+
+[node name="HexagonTile" parent="." instance=ExtResource("2_yqbmw")]
+transform = Transform3D(-4.54598e-07, 0, 10.4, 0, 1, 0, -10.4, 0, -4.54598e-07, 0, 0, 0)
+visible = false
+
+[node name="BorderHexagon" parent="." instance=ExtResource("3_7vst2")]
+transform = Transform3D(-2.14186e-07, 0, 4.9, 0, 1, 0, -4.9, 0, -2.14186e-07, 0, -0.01, 0)
+
+[node name="UI" type="Node3D" parent="."]
+
+[node name="GoOutside" parent="UI" instance=ExtResource("4_i0rlq")]
+
+[node name="GoInside" parent="UI" instance=ExtResource("5_u56vv")]
+visible = false
+
+[node name="SelectedCellInfo" parent="UI" instance=ExtResource("4_flnna")]
+visible = false
+
+[node name="SelectedBeeInfo" parent="UI" instance=ExtResource("7_g5xtn")]
+visible = false
+
+[node name="SelectedHiveInfo" parent="UI" instance=ExtResource("8_eiyq8")]
+visible = false
+
+[node name="SelectedResourceInfo" parent="UI" instance=ExtResource("8_h8khb")]
+visible = false
+
+[node name="BuildingSelection" parent="UI" groups=["smallbuild"] instance=ExtResource("5_3jikj")]
+
+[node name="ResourceInterface" parent="UI" instance=ExtResource("6_k4d4n")]
+
+[node name="HiveDebugActions" parent="UI" instance=ExtResource("7_alq7j")]
+visible = false
+
+[node name="FloatingResourceText" parent="UI" instance=ExtResource("8_3oedf")]
+
+[node name="BeeSelection" parent="UI" instance=ExtResource("11_13dyf")]
+visible = false
+
+[node name="BattleScreen" parent="UI" instance=ExtResource("14_f1gt5")]
+visible = false
+
+[node name="MultiBees" parent="UI" instance=ExtResource("14_v40gq")]
+visible = false
+
+[node name="MediumInside" parent="UI" groups=["mediuminside"] instance=ExtResource("17_y8ij3")]
+visible = false
+
+[node name="MediumOutside" parent="UI" groups=["mediumoutside"] instance=ExtResource("18_4swfb")]
+visible = false
+
+[node name="LargeOutside" parent="UI" groups=["largeoutside"] instance=ExtResource("19_p5gy3")]
+visible = false
+
+[node name="LargeInside" parent="UI" groups=["largeinside"] instance=ExtResource("20_pqv0d")]
+visible = false
+
+[node name="MainMenu" parent="UI" instance=ExtResource("4_upn6t")]
+unique_name_in_owner = true
+offset_left = 0.0
+offset_right = 0.0
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("17_1js1b")]
+visible = false
+
+[node name="SettingsMenu" parent="UI" instance=ExtResource("17_0bcke")]
+unique_name_in_owner = true
+visible = false
+
+[node name="FailureScreen" parent="UI" instance=ExtResource("19_pmq2k")]
+visible = false
+mouse_filter = 2
+
+[node name="WinnerScreen" parent="UI" instance=ExtResource("25_njqlh")]
+visible = false
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="UI"]
+stream = ExtResource("26_ung8h")
+attenuation_model = 3
+autoplay = true
+bus = &"Music"
+
+[node name="ClickDetector" parent="." instance=ExtResource("5_yrobs")]

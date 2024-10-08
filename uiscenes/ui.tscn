@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://csiy6mlbw7uuq"]
+
+[ext_resource type="PackedScene" uid="uid://dvbnkhnymehby" path="res://uiscenes/selected_tile_info.tscn" id="1_k17cy"]
+[ext_resource type="PackedScene" uid="uid://djt74eirijcb1" path="res://uiscenes/building_selection.tscn" id="2_3qmof"]
+[ext_resource type="PackedScene" uid="uid://bnrel83csvslp" path="res://uiscenes/resource_interface.tscn" id="3_ndys4"]
+[ext_resource type="PackedScene" uid="uid://chej1yjky4afw" path="res://uiscenes/hive_debug_actions.tscn" id="4_e4le0"]
+[ext_resource type="PackedScene" uid="uid://qmodjjcwwjv0" path="res://uiscenes/floating_resource_text.tscn" id="5_40onh"]
+
+[node name="UI" type="Node3D"]
+
+[node name="SelectedCellInfo" parent="." instance=ExtResource("1_k17cy")]
+visible = false
+
+[node name="BuildingSelection" parent="." instance=ExtResource("2_3qmof")]
+
+[node name="ResourceInterface" parent="." instance=ExtResource("3_ndys4")]
+
+[node name="HiveDebugActions" parent="." instance=ExtResource("4_e4le0")]
+
+[node name="FloatingResourceText" parent="." instance=ExtResource("5_40onh")]

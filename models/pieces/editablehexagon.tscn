@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://v4debgvdpu21"]
+
+[ext_resource type="PackedScene" uid="uid://bpdili1x4ak44" path="res://models/pieces/base/hexagon.glb" id="1_qah62"]
+[ext_resource type="Material" uid="uid://cx2oidmk2avoo" path="res://placeholdermaterials/placeholder_tile.tres" id="2_00q1e"]
+
+[node name="hexagon" instance=ExtResource("1_qah62")]
+
+[node name="Circle" parent="." index="0"]
+material_override = ExtResource("2_00q1e")

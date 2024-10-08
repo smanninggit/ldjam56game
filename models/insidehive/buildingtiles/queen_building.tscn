@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://pu5a3o53g3xj"]
+
+[ext_resource type="Script" path="res://scripts/base_tile_control.gd" id="2_05qt5"]
+[ext_resource type="PackedScene" uid="uid://d1ha8a1gkbkh8" path="res://models/pieces/selected_hexagon.tscn" id="3_g1vd2"]
+[ext_resource type="PackedScene" uid="uid://gs6dugqtb0ek" path="res://models/pieces/queen_hexagon.tscn" id="3_ymd5i"]
+[ext_resource type="Script" path="res://scripts/tile_descriptor.gd" id="4_qdg13"]
+
+[node name="HexagonTile" type="Node3D"]
+script = ExtResource("2_05qt5")
+cellsIndex = 7
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.050421, 0)
+depth = 0.1
+polygon = PackedVector2Array(-0.252423, 0.427766, -0.500063, -0.00202247, -0.250376, -0.429764, 0.246951, -0.429764, 0.494591, -0.00406908, 0.251044, 0.429813)
+
+[node name="queen_hexagon" parent="Area3D" instance=ExtResource("3_ymd5i")]
+
+[node name="hexagon cover" parent="." instance=ExtResource("3_g1vd2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.01, 0)
+visible = false
+
+[node name="TileDescriptor" type="Node3D" parent="."]
+script = ExtResource("4_qdg13")
+
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]

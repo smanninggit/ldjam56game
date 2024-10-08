@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjvwxbiycnf31"]
+
+[ext_resource type="Script" path="res://scripts/click_detector.gd" id="1_f83le"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vhtif"]
+size = Vector3(29.6039, 1, 19.0875)
+
+[node name="ClickDetector" type="Area3D"]
+script = ExtResource("1_f83le")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.132141, -1.74336, 0.572113)
+shape = SubResource("BoxShape3D_vhtif")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

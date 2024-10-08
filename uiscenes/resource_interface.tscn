@@ -1,0 +1,289 @@
+[gd_scene load_steps=10 format=3 uid="uid://bnrel83csvslp"]
+
+[ext_resource type="Script" path="res://scripts/resource_interface.gd" id="1_sdrdr"]
+[ext_resource type="Texture2D" uid="uid://dg8ywo5lruux8" path="res://uiassets/icons/Pollen_Icon.png" id="2_8hbeq"]
+[ext_resource type="Texture2D" uid="uid://c536a8aepuh7k" path="res://uiassets/icons/Wax_Bars_Icon.png" id="3_jfl08"]
+[ext_resource type="Texture2D" uid="uid://dmn26ejxeubgq" path="res://uiassets/icons/Honey_Drop_Icon.png" id="4_s5axf"]
+[ext_resource type="Texture2D" uid="uid://c17huu0hir6ix" path="res://uiassets/icons/Egg_Icon.png" id="5_t0mvn"]
+[ext_resource type="Texture2D" uid="uid://00vehrvufn3j" path="res://uiassets/icons/Scout_Icon.png" id="6_0b863"]
+[ext_resource type="Texture2D" uid="uid://bo0fgqr4seem6" path="res://uiassets/icons/Worker_Icon.png" id="7_wkr84"]
+[ext_resource type="Texture2D" uid="uid://d4icvleludgrn" path="res://uiassets/icons/Soldier_Icon.png" id="8_0vc7m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5ao6"]
+bg_color = Color(0.617106, 0.616349, 0.391989, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.38198, 0.205714, 0.00161705, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="ResourceInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 559.38
+offset_right = 559.38
+grow_horizontal = 0
+scale = Vector2(0.86, 0.86)
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 2
+script = ExtResource("1_sdrdr")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1452.6
+offset_top = -7.76
+offset_right = 819.4
+offset_bottom = 249.24
+grow_horizontal = 0
+scale = Vector2(0.35, 0.35)
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_b5ao6")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ResourceHbox" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="PollenIcon" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox"]
+clip_contents = true
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("2_8hbeq")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="PollenAmount" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 49
+text = "0000"
+
+[node name="VSeparator4" type="VSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="ResourceHbox2" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="WaxIcon" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox2"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("3_jfl08")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="WaxAmount" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 49
+text = "0000"
+
+[node name="Slash" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 49
+text = "/"
+
+[node name="WaxMax" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 49
+text = "0000"
+
+[node name="VSeparator6" type="VSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="ResourceHbox3" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HoneyIcon" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox3"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_s5axf")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="HoneyAmount" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox3"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 49
+text = "0000"
+
+[node name="Slash" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 49
+text = "/"
+
+[node name="HoneyMax" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox3"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 49
+text = "0000"
+
+[node name="VSeparator5" type="VSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="ResourceHbox7" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="EggsIcon" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox7"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_t0mvn")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="EggsAmount" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox7"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 49
+text = "0000"
+
+[node name="VSeparator3" type="VSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="ResourceHbox4" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="BeesIcon" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox4"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("6_0b863")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="BeesAmount" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox4"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 49
+text = "0000"
+
+[node name="Slash" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 49
+text = "/"
+
+[node name="BeesMax" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox4"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 49
+text = "10"
+
+[node name="VSeparator2" type="VSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="ResourceHbox5" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="WorkersIcon" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox5"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("7_wkr84")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="WorkersAmount" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox5"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 49
+text = "0000"
+
+[node name="Slash2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 49
+text = "/"
+
+[node name="WorkersMax" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox5"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 49
+text = "10"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="ResourceHbox6" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="SoldiersIcon" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox6"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("8_0vc7m")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="SoldiersAmount" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox6"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 49
+text = "0000"
+
+[node name="Slash3" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox6"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 49
+text = "/"
+
+[node name="SoldiersMax" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResourceHbox6"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 49
+text = "10"
+
+[node name="VSeparator7" type="VSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2

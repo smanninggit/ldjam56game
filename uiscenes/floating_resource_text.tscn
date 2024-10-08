@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://qmodjjcwwjv0"]
+
+[ext_resource type="Script" path="res://scripts/floating_resource_text.gd" id="1_3l1o8"]
+
+[node name="FloatingResourceText" type="Control"]
+layout_direction = 3
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 9.45496
+offset_right = 9.45496
+grow_vertical = 2
+size_flags_horizontal = 8
+script = ExtResource("1_3l1o8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ResourceLabel" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "###"
+
+[node name="ResourceIcon" type="TextureRect" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+expand_mode = 2

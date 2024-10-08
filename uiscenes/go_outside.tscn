@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsutjshk68r4f"]
+
+[ext_resource type="Script" path="res://scripts/go_outside.gd" id="1_bncie"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3sv1q"]
+bg_color = Color(0.617106, 0.616349, 0.391989, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.38198, 0.205714, 0.00161705, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="GoOutside" type="Control"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -179.0
+offset_top = -211.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("1_bncie")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3sv1q")
+
+[node name="Button" type="Button" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Go Outside"
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/Button" to="." method="_on_button_pressed"]

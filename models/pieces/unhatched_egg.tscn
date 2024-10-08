@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://de0tm4k8lxf3v"]
+
+[ext_resource type="PackedScene" uid="uid://tqxp8gvmm8gb" path="res://models/pieces/base/Egg.fbx" id="1_4aleh"]
+
+[node name="Egg" instance=ExtResource("1_4aleh")]

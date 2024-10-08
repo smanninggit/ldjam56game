@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=3 uid="uid://djt74eirijcb1"]
+
+[ext_resource type="PackedScene" uid="uid://c8ncmmbwskxmy" path="res://uiscenes/building_button.tscn" id="1_wou6t"]
+[ext_resource type="Texture2D" uid="uid://b1dl0extdiw60" path="res://uiassets/icons/honey_factory_icon.png" id="2_85g1b"]
+[ext_resource type="Texture2D" uid="uid://dmio6rdqlc5v1" path="res://uiassets/icons/Honey_Tile_Icon.png" id="3_ap7ka"]
+[ext_resource type="Texture2D" uid="uid://igvupryi07on" path="res://uiassets/icons/wax_factory_icon.png" id="3_r6f8d"]
+[ext_resource type="Texture2D" uid="uid://dhcdajdsjiv3l" path="res://uiassets/icons/Wax_Tile_Icon.png" id="4_c54kj"]
+[ext_resource type="Texture2D" uid="uid://d13ttyrvq5yb5" path="res://uiassets/icons/Soldier_Tile_Icon.png" id="5_2rd2m"]
+[ext_resource type="Texture2D" uid="uid://hpdbmhuv6auw" path="res://uiassets/icons/Worker_Tile_Icon.png" id="6_1cl4k"]
+[ext_resource type="Texture2D" uid="uid://c17huu0hir6ix" path="res://uiassets/icons/Egg_Icon.png" id="7_cqiuv"]
+
+[node name="BuildingSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" groups=["buildingtut"]]
+layout_mode = 2
+text = "Click on a cell with the mouse! "
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="BuildingButton" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_wou6t")]
+layout_mode = 2
+image_icons = Array[Texture]([ExtResource("2_85g1b"), ExtResource("3_r6f8d"), ExtResource("3_ap7ka"), ExtResource("4_c54kj"), ExtResource("5_2rd2m"), ExtResource("6_1cl4k"), ExtResource("7_cqiuv")])
+
+[node name="BuildingButton2" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_wou6t")]
+layout_mode = 2
+image_icons = Array[Texture]([ExtResource("2_85g1b"), ExtResource("3_r6f8d"), ExtResource("3_ap7ka"), ExtResource("4_c54kj"), ExtResource("5_2rd2m"), ExtResource("6_1cl4k"), ExtResource("7_cqiuv")])
+
+[node name="BuildingButton3" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_wou6t")]
+layout_mode = 2
+image_icons = Array[Texture]([ExtResource("2_85g1b"), ExtResource("3_r6f8d"), ExtResource("3_ap7ka"), ExtResource("4_c54kj"), ExtResource("5_2rd2m"), ExtResource("6_1cl4k"), ExtResource("7_cqiuv")])
+
+[node name="BuildingButton4" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_wou6t")]
+layout_mode = 2
+image_icons = Array[Texture]([ExtResource("2_85g1b"), ExtResource("3_r6f8d"), ExtResource("3_ap7ka"), ExtResource("4_c54kj"), ExtResource("5_2rd2m"), ExtResource("6_1cl4k"), ExtResource("7_cqiuv")])
+
+[node name="BuildingButton5" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_wou6t")]
+layout_mode = 2
+image_icons = Array[Texture]([ExtResource("2_85g1b"), ExtResource("3_r6f8d"), ExtResource("3_ap7ka"), ExtResource("4_c54kj"), ExtResource("5_2rd2m"), ExtResource("6_1cl4k"), ExtResource("7_cqiuv")])
+
+[node name="BuildingButton6" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_wou6t")]
+layout_mode = 2
+image_icons = Array[Texture]([ExtResource("2_85g1b"), ExtResource("3_r6f8d"), ExtResource("3_ap7ka"), ExtResource("4_c54kj"), ExtResource("5_2rd2m"), ExtResource("6_1cl4k"), ExtResource("7_cqiuv")])
+
+[node name="BuildingButton7" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_wou6t")]
+layout_mode = 2
+image_icons = Array[Texture]([ExtResource("2_85g1b"), ExtResource("3_r6f8d"), ExtResource("3_ap7ka"), ExtResource("4_c54kj"), ExtResource("5_2rd2m"), ExtResource("6_1cl4k"), ExtResource("7_cqiuv")])
